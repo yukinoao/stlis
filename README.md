@@ -22,5 +22,17 @@ $ docker compose up
 ```
 
 疎通確認
-backend: localhost:3000[localhost:3000]
-frontend: localhost:8000[localhost:8000]
+- backend: localhost:3000[localhost:3000]
+- frontend: localhost:8000[localhost:8000]
+
+## gemの追加
+```
+gemfile編集後
+$ docker compose exec back bash
+# bundle install
+```
+
+## Dockerfile, docker-compose.ymlなど変更時
+```
+$ docker compose up --build
+```
