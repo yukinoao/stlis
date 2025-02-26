@@ -34,6 +34,12 @@ $ docker compose exec back bash
 # bundle install
 ```
 
+## front側の環境変更
+```
+$ docker compose exec front sh
+# npm install # インストールしたいパッケージ
+```
+
 ## Dockerfile, docker-compose.ymlなど変更時
 ```
 $ docker compose up --build
