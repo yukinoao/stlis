@@ -10,6 +10,8 @@ $ git clone https://github.com/yukinoao/stlis.git
 ```
 $ cd backend
 $ touch .env.local
+$ cd ../frontend
+$ echo "PORT=8000" > .env.local # フロント開発環境でlocalhost:8000で動かすための設定
 ```
 
 master.keyファイルをbackend/直下に配置
