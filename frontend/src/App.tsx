@@ -1,15 +1,15 @@
-import React from 'react';
-import { useEffect } from 'react'
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   useEffect(() => {
-    fetch('http://localhost:3000/api/health_check')
+    fetch("http://localhost:3000/api/health_check")
       .then((response) => response.json())
       .then((data) => console.log(data))
-      .catch((error) => console.error('Error:', error))
-  }, [])
+      .catch((error) => console.error("Error:", error));
+  }, []);
 
   return (
     <div className="App">
