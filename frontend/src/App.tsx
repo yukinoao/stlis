@@ -1,33 +1,27 @@
 import React from "react";
 import { useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Button from "@mui/material/Button";
+import axios from "./axiox";
 
 function App() {
   useEffect(() => {
-    fetch("http://localhost:3000/api/health_check")
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error:", error));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/health_check");
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
         <Button variant="contained">Hello World</Button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
